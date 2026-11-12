@@ -1,1 +1,1 @@
-# -GeoPulse-Hyper-Local-Retail-Mobility-Analytics
+# GeoPulse-Hyper-Local-Retail-Mobility-Analytics
