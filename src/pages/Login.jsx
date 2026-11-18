@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Eye,
   EyeOff,
@@ -170,13 +171,9 @@ export default function Login() {
 
             <p className="signup-prompt">
               Don&apos;t have an account?{" "}
-              <button
-                className="text-link"
-                onClick={() => setNotice("Sign-up is not connected yet.")}
-                type="button"
-              >
+              <Link className="text-link" to="/signup">
                 Sign Up
-              </button>
+              </Link>
             </p>
           </div>
         </div>

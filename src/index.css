@@ -338,6 +338,41 @@ button {
   font-size: inherit;
 }
 
+.signup-card {
+  min-height: 650px;
+}
+
+.signup-form-content {
+  width: min(100%, 390px);
+}
+
+.signup-card .login-heading {
+  margin-bottom: 26px;
+}
+
+.signup-card .input-row {
+  margin-bottom: 16px;
+}
+
+.terms-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 1px 0 18px;
+  color: #555168;
+  font-size: 12px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.terms-option input {
+  width: 15px;
+  height: 15px;
+  margin: 2px 0 0;
+  accent-color: #6635c1;
+  flex: 0 0 auto;
+}
+
 button:focus-visible,
 a:focus-visible,
 input:focus-visible {
