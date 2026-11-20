@@ -139,12 +139,18 @@ function DashboardSidebar({ open, onClose }) {
           {navigation.map(({ label, icon: Icon, active }) => (
             <a
               aria-current={active ? "page" : undefined}
-              aria-disabled={!active}
+              aria-disabled={!active && label !== "Data Upload"}
               className={`dashboard-nav-link${active ? " dashboard-nav-link-active" : ""}`}
-              href={active ? "/dashboard" : undefined}
+              href={
+                label === "Dashboard"
+                  ? "/dashboard"
+                  : label === "Data Upload"
+                    ? "/data-upload"
+                    : undefined
+              }
               key={label}
-              onClick={active ? onClose : (event) => event.preventDefault()}
-              tabIndex={active ? 0 : -1}
+              onClick={active || label === "Data Upload" ? onClose : (event) => event.preventDefault()}
+              tabIndex={active || label === "Data Upload" ? 0 : -1}
             >
               <Icon aria-hidden="true" size={17} strokeWidth={2} />
               <span>{label}</span>
