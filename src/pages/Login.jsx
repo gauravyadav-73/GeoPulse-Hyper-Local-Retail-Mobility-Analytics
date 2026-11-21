@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Eye,
   EyeOff,
@@ -80,10 +80,11 @@ function CityIllustration() {
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [notice, setNotice] = useState("");
+  const navigate = useNavigate();
 
   function handleSubmit(event) {
     event.preventDefault();
-    setNotice("Sign-in is not connected yet. Connect your authentication service to continue.");
+    navigate("/dashboard");
   }
 
   return (

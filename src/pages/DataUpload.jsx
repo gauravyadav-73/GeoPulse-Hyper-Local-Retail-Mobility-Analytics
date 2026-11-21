@@ -20,6 +20,7 @@ import {
 const navigation = [
   { label: "Dashboard", icon: LayoutDashboard, href: "/dashboard" },
   { label: "Data Upload", icon: Upload, href: "/data-upload", active: true },
+  { label: "Data Preview", icon: FileText, href: "/data-preview" },
   { label: "Data Cleaning", icon: Activity },
   { label: "Data Validation", icon: ClipboardCheck },
   { label: "Data Analysis", icon: BarChart3 },

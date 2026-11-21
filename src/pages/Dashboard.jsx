@@ -36,6 +36,7 @@ import {
 const navigation = [
   { label: "Dashboard", icon: LayoutDashboard, active: true },
   { label: "Data Upload", icon: Upload },
+  { label: "Data Preview", icon: Database },
   { label: "Data Cleaning", icon: Activity },
   { label: "Data Validation", icon: ClipboardCheck },
   { label: "Data Analysis", icon: BarChart3 },
@@ -139,18 +140,20 @@ function DashboardSidebar({ open, onClose }) {
           {navigation.map(({ label, icon: Icon, active }) => (
             <a
               aria-current={active ? "page" : undefined}
-              aria-disabled={!active && label !== "Data Upload"}
+              aria-disabled={!active && label !== "Data Upload" && label !== "Data Preview"}
               className={`dashboard-nav-link${active ? " dashboard-nav-link-active" : ""}`}
               href={
                 label === "Dashboard"
                   ? "/dashboard"
                   : label === "Data Upload"
                     ? "/data-upload"
+                    : label === "Data Preview"
+                      ? "/data-preview"
                     : undefined
               }
               key={label}
-              onClick={active || label === "Data Upload" ? onClose : (event) => event.preventDefault()}
-              tabIndex={active || label === "Data Upload" ? 0 : -1}
+              onClick={active || label === "Data Upload" || label === "Data Preview" ? onClose : (event) => event.preventDefault()}
+              tabIndex={active || label === "Data Upload" || label === "Data Preview" ? 0 : -1}
             >
               <Icon aria-hidden="true" size={17} strokeWidth={2} />
               <span>{label}</span>
