@@ -18,7 +18,7 @@ const navigation = [
   { label: "Dashboard", icon: LayoutDashboard, href: "/dashboard" },
   { label: "Data Upload", icon: Upload, href: "/data-upload" },
   { label: "Data Preview", icon: FileText, href: "/data-preview", active: true },
-  { label: "Data Cleaning", icon: Activity },
+  { label: "Data Cleaning", icon: Activity, href: "/data-cleaning" },
   { label: "Data Validation", icon: ClipboardCheck },
   { label: "Data Analysis", icon: BarChart3 },
   { label: "Mobility Analysis", icon: MapPinned },

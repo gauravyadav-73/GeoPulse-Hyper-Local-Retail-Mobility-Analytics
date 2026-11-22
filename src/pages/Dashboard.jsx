@@ -37,7 +37,7 @@ const navigation = [
   { label: "Dashboard", icon: LayoutDashboard, active: true },
   { label: "Data Upload", icon: Upload },
   { label: "Data Preview", icon: Database },
-  { label: "Data Cleaning", icon: Activity },
+  { label: "Data Cleaning", icon: Activity, href: "/data-cleaning" },
   { label: "Data Validation", icon: ClipboardCheck },
   { label: "Data Analysis", icon: BarChart3 },
   { label: "Mobility Analysis", icon: MapPinned },
@@ -137,23 +137,24 @@ function DashboardSidebar({ open, onClose }) {
 
         <nav aria-label="Main navigation" className="dashboard-nav">
           <p className="dashboard-nav-heading">WORKSPACE</p>
-          {navigation.map(({ label, icon: Icon, active }) => (
+          {navigation.map(({ label, icon: Icon, active, href }) => (
             <a
               aria-current={active ? "page" : undefined}
-              aria-disabled={!active && label !== "Data Upload" && label !== "Data Preview"}
+              aria-disabled={!active && label !== "Data Upload" && label !== "Data Preview" && label !== "Data Cleaning"}
               className={`dashboard-nav-link${active ? " dashboard-nav-link-active" : ""}`}
               href={
-                label === "Dashboard"
-                  ? "/dashboard"
-                  : label === "Data Upload"
-                    ? "/data-upload"
-                    : label === "Data Preview"
-                      ? "/data-preview"
-                    : undefined
+                href
+                  || (label === "Dashboard"
+                    ? "/dashboard"
+                    : label === "Data Upload"
+                      ? "/data-upload"
+                      : label === "Data Preview"
+                        ? "/data-preview"
+                        : undefined)
               }
               key={label}
-              onClick={active || label === "Data Upload" || label === "Data Preview" ? onClose : (event) => event.preventDefault()}
-              tabIndex={active || label === "Data Upload" || label === "Data Preview" ? 0 : -1}
+              onClick={active || label === "Data Upload" || label === "Data Preview" || label === "Data Cleaning" ? onClose : (event) => event.preventDefault()}
+              tabIndex={active || label === "Data Upload" || label === "Data Preview" || label === "Data Cleaning" ? 0 : -1}
             >
               <Icon aria-hidden="true" size={17} strokeWidth={2} />
               <span>{label}</span>
