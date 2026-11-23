@@ -1079,6 +1079,105 @@ input:focus-visible {
   filter: brightness(1.06);
 }
 
+.validation-content {
+  width: min(100%, 900px);
+  padding-top: 6px;
+}
+
+.validation-results {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(250px, 0.85fr);
+  align-items: stretch;
+  gap: 18px;
+}
+
+.validation-check-list {
+  display: grid;
+  align-content: center;
+  gap: 11px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.validation-check {
+  display: flex;
+  min-height: 52px;
+  align-items: center;
+  gap: 11px;
+  padding: 10px 14px;
+  border: 1px solid #dcefe1;
+  border-radius: 10px;
+  background: linear-gradient(110deg, #f3fbf5, #eaf8ed);
+  box-shadow: 0 3px 10px rgba(37, 116, 61, 0.035);
+}
+
+.validation-check-icon {
+  display: grid;
+  width: 21px;
+  height: 21px;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: #27a653;
+}
+
+.validation-check-label {
+  min-width: 0;
+  flex: 1;
+  color: #2f3c33;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.validation-check-result {
+  color: #3a5542;
+  font-size: 11px;
+  text-align: right;
+}
+
+.validation-success-card {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 26px 22px;
+  border: 1px solid #d6efdc;
+  border-radius: 13px;
+  background: linear-gradient(145deg, #f0fff2, #e3f8e8);
+  box-shadow: 0 5px 18px rgba(38, 130, 63, 0.06);
+  text-align: center;
+}
+
+.validation-success-icon {
+  display: grid;
+  width: 66px;
+  height: 66px;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: linear-gradient(145deg, #2fc653, #1ea943);
+  box-shadow: 0 6px 15px rgba(37, 174, 70, 0.2);
+}
+
+.validation-success-card h2 {
+  margin: 17px 0 0;
+  color: #24783b;
+  font-size: 17px;
+  font-weight: 760;
+  letter-spacing: -0.3px;
+}
+
+.validation-success-card p {
+  max-width: 230px;
+  margin: 9px 0 0;
+  color: #526b58;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
 @media (max-width: 760px) {
   .upload-sidebar {
     position: static;
@@ -1133,6 +1232,14 @@ input:focus-visible {
 
   .cleaning-options {
     grid-template-columns: 1fr;
+  }
+
+  .validation-results {
+    grid-template-columns: 1fr;
+  }
+
+  .validation-success-card {
+    min-height: 230px;
   }
 }
 
