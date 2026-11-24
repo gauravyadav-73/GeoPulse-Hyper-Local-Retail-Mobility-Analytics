@@ -39,7 +39,7 @@ const navigation = [
   { label: "Data Preview", icon: Database },
   { label: "Data Cleaning", icon: Activity, href: "/data-cleaning" },
   { label: "Data Validation", icon: ClipboardCheck },
-  { label: "Data Analysis", icon: BarChart3 },
+  { label: "Data Analysis", icon: BarChart3, href: "/data-analysis" },
   { label: "Mobility Analysis", icon: MapPinned },
   { label: "Retail Insights", icon: ShoppingBag },
   { label: "Visualizations", icon: ChartPie },
@@ -140,7 +140,7 @@ function DashboardSidebar({ open, onClose }) {
           {navigation.map(({ label, icon: Icon, active, href }) => (
             <a
               aria-current={active ? "page" : undefined}
-              aria-disabled={!active && label !== "Data Upload" && label !== "Data Preview" && label !== "Data Cleaning"}
+              aria-disabled={!active && label !== "Data Upload" && label !== "Data Preview" && label !== "Data Cleaning" && label !== "Data Analysis"}
               className={`dashboard-nav-link${active ? " dashboard-nav-link-active" : ""}`}
               href={
                 href
@@ -153,8 +153,8 @@ function DashboardSidebar({ open, onClose }) {
                         : undefined)
               }
               key={label}
-              onClick={active || label === "Data Upload" || label === "Data Preview" || label === "Data Cleaning" ? onClose : (event) => event.preventDefault()}
-              tabIndex={active || label === "Data Upload" || label === "Data Preview" || label === "Data Cleaning" ? 0 : -1}
+              onClick={active || label === "Data Upload" || label === "Data Preview" || label === "Data Cleaning" || label === "Data Analysis" ? onClose : (event) => event.preventDefault()}
+              tabIndex={active || label === "Data Upload" || label === "Data Preview" || label === "Data Cleaning" || label === "Data Analysis" ? 0 : -1}
             >
               <Icon aria-hidden="true" size={17} strokeWidth={2} />
               <span>{label}</span>
