@@ -59,8 +59,8 @@ export default function DataAnalysis() {
   const [period, setPeriod] = useState("Monthly");
 
   return (
-    <div className="upload-shell">
-      <aside className="upload-sidebar">
+    <div className="upload-shell analysis-shell">
+      <aside className="upload-sidebar analysis-sidebar">
         <Link aria-label="GeoPulse dashboard" className="upload-brand" to="/dashboard">
           <span className="upload-brand-mark">
             <MapPin aria-hidden="true" size={19} fill="currentColor" />
@@ -97,8 +97,8 @@ export default function DataAnalysis() {
         </div>
       </aside>
 
-      <main className="upload-main">
-        <section aria-labelledby="analysis-title" className="upload-content analysis-content">
+      <main className="upload-main analysis-main">
+        <section aria-labelledby="analysis-title" className="upload-content analysis-content analysis-surface">
           <div className="upload-heading analysis-heading">
             <h1 id="analysis-title">Data Analysis</h1>
             <p>Analyze retail and mobility data to identify trends</p>
